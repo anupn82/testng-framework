@@ -15,10 +15,14 @@ public class LoginTests {
         System.out.println("After Suite executed...");
     }
 
+    @Parameters({"browser","os"})
     @BeforeTest
-    public void beforeTest(){
+    public void beforeTest(String browser, String os){
         System.out.println("Before test executed...");
+        System.out.println("Browser :" + browser);
+        System.out.println("OS : "+ os);
     }
+
 
     @AfterTest
     public void afterTest(){
