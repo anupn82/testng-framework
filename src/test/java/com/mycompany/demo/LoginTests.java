@@ -49,9 +49,14 @@ public class LoginTests {
         System.out.println("After method executed...");
     }
 
-    @Test(priority = 1, testName = "Login test with valid username and password")
-    public void loginWithValidUser(){
+    @Test(priority = 1,
+            testName = "Login test with valid username and password",
+            dataProvider = "userInfo",
+            dataProviderClass = TestData.class)
+    public void loginWithValidUser(String userName, String password){
         System.out.println("Login test with valid username and password");
+        System.out.println("Username:" + userName);
+        System.out.println("Password:"+ password);
         String exp = "Hello";
         String act = "Hello";
         Assert.assertEquals(act,exp, "The words don't match");
